@@ -666,12 +666,8 @@ footer .footer-eon .eon-text span{font-family:var(--ui);font-size:11.5px;color:v
     <h3 id="modalTitle">Pre-inscribir <em>tu curso</em></h3>
     <p class="sub">Sin pago hoy. Te avisamos cuando V1.0 lance y se activa tu plan con el precio Fundador congelado.</p>
     <div class="amount" id="amountTag">Plan Fundador · $15.000 cuando lance</div>
-    <form id="reservaForm" name="auleon-waitlist" method="POST" action="https://formsubmit.co/fellay@gmail.com" novalidate>
-      <input type="hidden" name="_subject" value="Auleón · Nueva pre-inscripción de curso">
-      <input type="hidden" name="_next" value="https://auleon.cl/gracias.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_honey" value="">
+    <form id="reservaForm" name="auleon-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html" novalidate>
+      <input type="hidden" name="form-name" value="auleon-waitlist">
       <p class="hidden"><label>No completar: <input name="bot-field"></label></p>
       <input type="hidden" name="plan" id="planField" value="Fundador">
       <input type="hidden" name="amount" id="amountField" value="15000">
@@ -980,12 +976,33 @@ footer .footer-eon .eon-text span{font-family:var(--ui);font-size:11.5px;color:v
   }
   if (form) {
     form.addEventListener('submit',function(e){
-      if(!validate()){e.preventDefault();return;}
+      e.preventDefault();
+      if(!validate()){return;}
       if (submitBtn) {
         submitBtn.setAttribute('disabled','disabled');
-        submitBtn.textContent='Sumando a la lista…';
+        submitBtn.textContent='Abriendo WhatsApp…';
       }
-      // POST a Netlify Forms (data-netlify="true") — redirige a /gracias.html en éxito.
+      function v(id){var el=document.getElementById(id);return el?(el.value||'').trim():'';}
+      var planName = planField ? planField.value : 'Fundador';
+      var regionVal = v('region');
+      var comunaVal = v('comuna');
+      var colegioVal = v('colegio')==='otro' ? v('colegio_otro') : v('colegio');
+      var gmailVal = v('gmail_status');
+      var msg =
+        '🦁 Pre-inscripción Auleón\n'+
+        '——————————————\n'+
+        'Nombre: '+v('nombre')+'\n'+
+        'Curso: '+v('curso')+'\n'+
+        'Colegio: '+(colegioVal||'-')+'\n'+
+        'Región: '+(regionVal||'-')+'\n'+
+        'Comuna: '+(comunaVal||'-')+'\n'+
+        'Email: '+v('email')+'\n'+
+        'WhatsApp: '+v('wsp')+'\n'+
+        'Plan: '+planName+'\n'+
+        'Status Gmail curso: '+(gmailVal||'-');
+      var waUrl = 'https://wa.me/'+WSP_DEST+'?text='+encodeURIComponent(msg);
+      window.open(waUrl,'_blank','noopener');
+      setTimeout(function(){window.location.href='/gracias.html';}, 800);
     });
   }
   var altMailBtn = document.getElementById('altMail');
