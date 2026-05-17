@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Auleón — Icono avatar mascota león">
+  <title>Auleón — mascota</title>
+  <desc>Icono cuadrado de la mascota león de Auleón, optimizado para avatar de bot WhatsApp y redes sociales</desc>
+
+  <rect x="0" y="0" width="320" height="320" rx="60" fill="#FAF7F0"/>
+
+  <g transform="translate(160, 160)">
+    <circle cx="0" cy="0" r="120" fill="#F4A442"/>
+
+    <path d="M -120 0 L -150 -32 L -135 -42 L -120 -22 Z" fill="#F4A442"/>
+    <path d="M -85 -85 L -115 -118 L -98 -128 L -82 -105 Z" fill="#F4A442"/>
+    <path d="M 0 -120 L 0 -160 L 18 -150 L 12 -120 Z" fill="#F4A442"/>
+    <path d="M 85 -85 L 115 -118 L 98 -128 L 82 -105 Z" fill="#F4A442"/>
+    <path d="M 120 0 L 150 -32 L 135 -42 L 120 -22 Z" fill="#F4A442"/>
+    <path d="M 120 0 L 150 32 L 135 42 L 120 22 Z" fill="#F4A442"/>
+    <path d="M 85 85 L 115 118 L 98 128 L 82 105 Z" fill="#F4A442"/>
+    <path d="M 0 120 L 0 160 L -18 150 L -12 120 Z" fill="#F4A442"/>
+    <path d="M -85 85 L -115 118 L -98 128 L -82 105 Z" fill="#F4A442"/>
+    <path d="M -120 0 L -150 32 L -135 42 L -120 22 Z" fill="#F4A442"/>
+
+    <circle cx="0" cy="0" r="82" fill="#1F2121"/>
+
+    <ellipse cx="-28" cy="-18" rx="9" ry="13" fill="#2FDD69"/>
+    <ellipse cx="28" cy="-18" rx="9" ry="13" fill="#2FDD69"/>
+
+    <path d="M -15 18 L 0 30 L 15 18 L 0 38 Z" fill="#F4A442"/>
+
+    <path d="M 0 30 L 0 52" stroke="#FAF7F0" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 0 52 L -12 58" stroke="#FAF7F0" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 0 52 L 12 58" stroke="#FAF7F0" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+    <line x1="-48" y1="22" x2="-72" y2="18" stroke="#FAF7F0" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="-48" y1="32" x2="-72" y2="34" stroke="#FAF7F0" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="48" y1="22" x2="72" y2="18" stroke="#FAF7F0" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="48" y1="32" x2="72" y2="34" stroke="#FAF7F0" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</svg>
