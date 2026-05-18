@@ -986,7 +986,7 @@ footer .footer-eon .eon-text span{font-family:var(--ui);font-size:11.5px;color:v
       var planName = planField ? planField.value : 'Fundador';
       var regionVal = v('region');
       var comunaVal = v('comuna');
-      var colegioVal = v('colegio')==='otro' ? v('colegio_otro') : v('colegio');
+      var colegioVal = v('colegio')==='__OTRO__' ? v('colegio_otro') : v('colegio');
       var gmailVal = v('gmail_status');
       var msg =
         '🦁 Pre-inscripción Auleón\n'+
