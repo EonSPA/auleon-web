@@ -55,7 +55,7 @@
   .skip:focus{left:16px;top:16px}
   .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.42;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='0.35'/></svg>");}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s var(--ease),box-shadow .35s var(--ease),backdrop-filter .35s var(--ease);}
+  nav{position:fixed;top:44px;left:0;right:0;z-index:100;transition:background .35s var(--ease),box-shadow .35s var(--ease),backdrop-filter .35s var(--ease);}
   nav .bar{display:flex;align-items:center;gap:28px;padding:18px 0;transition:padding .3s var(--ease)}
   nav.scrolled{background:rgba(251,246,238,.78);backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line);}
   nav.scrolled .bar{padding:12px 0}
@@ -326,9 +326,36 @@
     .modal-head,form{padding-left:22px;padding-right:22px}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+  /* === Top banner Fundador === */
+  .topbanner{position:fixed;top:0;left:0;right:0;z-index:101;background:linear-gradient(90deg,#1C1814 0%,#2A211B 50%,#1C1814 100%);color:var(--cream);display:flex;align-items:center;justify-content:center;gap:14px;padding:9px 22px;min-height:44px;border-bottom:1px solid rgba(244,164,66,.22);font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;letter-spacing:.005em;text-align:center;width:100%;cursor:pointer;transition:background .25s var(--ease)}
+  .topbanner:hover{background:linear-gradient(90deg,#1C1814 0%,#322419 50%,#1C1814 100%)}
+  .topbanner .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(244,164,66,.65);animation:pulseBanner 2s infinite;flex:0 0 auto}
+  @keyframes pulseBanner{0%{box-shadow:0 0 0 0 rgba(244,164,66,.6)}70%{box-shadow:0 0 0 10px rgba(244,164,66,0)}100%{box-shadow:0 0 0 0 rgba(244,164,66,0)}}
+  .topbanner .topb-text{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+  .topbanner .amb{color:var(--amber);font-weight:700;font-family:'Bricolage Grotesque',sans-serif}
+  .topbanner b{color:#fff;font-weight:700}
+  .topbanner .sep{opacity:.35;margin:0 2px}
+  .topbanner .cta{display:inline-flex;align-items:center;gap:6px;background:var(--amber);color:var(--ink);padding:6px 14px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12.5px;transition:transform .2s var(--ease),background .2s,box-shadow .2s;margin-left:6px;box-shadow:0 6px 14px -8px rgba(244,164,66,.55);white-space:nowrap}
+  .topbanner:hover .cta{background:#FFB860;transform:translateY(-1px);box-shadow:0 10px 18px -8px rgba(244,164,66,.7)}
+  @media (max-width:760px){
+    .topbanner{font-size:12px;padding:8px 14px;gap:8px;min-height:40px}
+    .topbanner .cta{padding:5px 11px;font-size:11.5px}
+    nav{top:40px}
+  }
+  @media (max-width:430px){
+    .topbanner{font-size:11.5px;gap:6px;padding:7px 10px;min-height:38px}
+    .topbanner .topb-mob-hide{display:none}
+    .topbanner .cta{padding:4px 10px;font-size:11px;margin-left:2px}
+    nav{top:38px}
+  }
 </style>
 </head>
 <body>
+<button class="topbanner js-open" data-plan="Fundador" aria-label="Pre-inscribir mi curso al Plan Fundador">
+  <span class="dot" aria-hidden="true"></span>
+  <span class="topb-text"><span class="amb">Plan Fundador</span><span class="sep">·</span><b>$10.000/mes</b><span class="topb-mob-hide">&nbsp;congelado 3 años</span><span class="sep">·</span><span>cupos limitados</span></span>
+  <span class="cta">Pre-inscribir mi curso →</span>
+</button>
 <a href="#main" class="skip">Saltar al contenido</a>
 <div class="grain" aria-hidden="true"></div>
 
@@ -363,7 +390,7 @@
           <a href="#funciona" class="btn btn-ghost">Ver cómo funciona</a>
         </div>
         <p class="microcopy rv in" data-d="3">Sin tarjeta · Sin compromiso · Te contactamos por <b>WhatsApp</b> en los próximos días</p>
-        <div class="founder-tag rv in" data-d="4"><span class="dot"></span><b>Plan Fundador:</b>&nbsp;$10.000/mes congelado 3 años · ahorrás $180.000 · solo los primeros cursos</div>
+        <div class="founder-tag rv in" data-d="4"><span class="dot"></span><b>Plan Fundador:</b>&nbsp;$10.000/mes congelado 3 años · ahorrás $792.000 · solo los primeros cursos</div>
       </div>
       <div class="demo rv in" data-d="2">
         <div class="demo-float">aprobado en 14 s</div>
@@ -539,8 +566,8 @@
           <span class="tag">Beta · cupos limitados</span>
           <div class="pn">Fundador</div>
           <div class="pd">Plan Total a precio promo · cualquier curso</div>
-          <div class="pr">$10.000<small>/mes · 69% off Total · 3 años</small></div>
-          <span class="savings">Ahorrás $180.000 en 3 años</span>
+          <div class="pr">$10.000<small>/mes · 69% off Total · congelado 3 años</small></div>
+          <span class="savings">Ahorrás $792.000 en 3 años</span>
           <ul>
             <li>Todo el plan Total incluido</li>
             <li>Sesión 1:1 de onboarding (30 min)</li>
@@ -596,7 +623,7 @@
       <h2 class="rv">Lo que igual te estás <span class="it">preguntando.</span></h2>
       <div class="faq">
         <div class="qa rv"><button>¿Cómo funciona la pre-inscripción? ¿Pago algo ahora?<span class="ic"></span></button><div class="ans"><p><b>No pagas nada hoy.</b> Estamos en los últimos ajustes antes de partir. Te pre-inscribes con los datos del curso, te contactamos por WhatsApp en los próximos días para coordinar la partida, y al arrancar recibes link de activación vía Flow.cl. Sin permanencia, cancelable al activar.</p></div></div>
-        <div class="qa rv"><button>¿Cuándo arrancan los primeros cursos?<span class="ic"></span></button><div class="ans"><p>Arrancamos durante 2026 con la cohorte Fundador. Reservar como Fundador asegura el precio congelado 3 años garantizados ($10.000/mes — 69% off del Total · ahorrás $180.000) y entrada al primer grupo en producción.</p></div></div>
+        <div class="qa rv"><button>¿Cuándo arrancan los primeros cursos?<span class="ic"></span></button><div class="ans"><p>Arrancamos durante 2026 con la cohorte Fundador. Reservar como Fundador asegura el precio congelado 3 años garantizados ($10.000/mes — 69% off del Total · ahorrás $792.000) y entrada al primer grupo en producción.</p></div></div>
         <div class="qa rv"><button>¿Cómo separa lo del colegio de lo del curso?<span class="ic"></span></button><div class="ans"><p>En el onboarding capturamos el dominio del correo del colegio (ej. <b>@saintmarys.cl</b>). Todo lo que llega de ese dominio se clasifica como <b>Colegio (oficial)</b>; lo que llega de cualquier otro origen es <b>Curso (interno)</b>. La prioridad se cruza: colegio + plazo menor a 48 h va arriba siempre. Los plazos oficiales nunca se pierden entre los regalos de cumpleaños.</p></div></div>
         <div class="qa rv"><button>¿Necesito una cuenta Gmail del curso?<span class="ic"></span></button><div class="ans"><p>Sí. Auleón requiere una cuenta Gmail (o Google Workspace) para conectarse de forma segura al correo del curso. Si aún no la tienen, <b>te acompañamos a crearla y configurarla en el onboarding — sin costo adicional.</b> La cuenta queda a nombre del curso, no de EON.</p></div></div>
         <div class="qa rv"><button>¿Sirve si mi colegio comunica por Classroom o Schoolnet?<span class="ic"></span></button><div class="ans"><p>V1.0 procesa correo del curso. <b>Classroom + Schoolnet + Schooltrack + otras plataformas educativas entran en V1.1</b> (estimado segundo semestre 2026). Pre-inscribirte hoy asegura cohorte Fundador y aviso cuando las nuevas fuentes se sumen.</p></div></div>
@@ -610,7 +637,7 @@
   <section class="final">
     <div class="wrap">
       <h2 class="rv">Sé el primer delegado de tu colegio <span class="it">en delegar de verdad.</span></h2>
-      <p class="rv" data-d="1">Pre-inscríbete sin pago hoy. Cupos Fundador limitados ($10.000 congelados 3 años · ahorrás $180.000). Te contactamos por WhatsApp para coordinar la partida. Auleón aprende del estilo de tu curso, no de un genérico de Silicon Valley.</p>
+      <p class="rv" data-d="1">Pre-inscríbete sin pago hoy. Cupos Fundador limitados ($10.000 congelados 3 años · ahorrás $792.000). Te contactamos por WhatsApp para coordinar la partida. Auleón aprende del estilo de tu curso, no de un genérico de Silicon Valley.</p>
       <button class="btn btn-primary js-open rv" data-d="2" data-plan="Fundador">Pre-inscribir mi curso →</button>
     </div>
   </section>
